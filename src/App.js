@@ -6,9 +6,9 @@ import GlobalStyles from "./GlobalStyles";
 import * as serviceWorker from "./serviceWorker";
 import Pace from "./shared/components/Pace";
 
-const LoggedInComponent = lazy(() => import("./logged_in/components/Main"));
+const AdminComponent = lazy(() => import("./admin/components/Main"));
 
-const LoggedOutComponent = lazy(() => import("./logged_out/components/Main"));
+const WebsiteComponent = lazy(() => import("./website/components/Main"));
 
 function App() {
   return (
@@ -19,11 +19,11 @@ function App() {
         <Pace color={theme.palette.primary.light} />
         <Suspense fallback={<Fragment />}>
           <Switch>
-            <Route path="/c">
-              <LoggedInComponent />
+            <Route path="/admin">
+              <AdminComponent />
             </Route>
             <Route>
-              <LoggedOutComponent />
+              <WebsiteComponent />
             </Route>
           </Switch>
         </Suspense>
