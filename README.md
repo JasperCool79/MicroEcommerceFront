@@ -1,4 +1,4 @@
-# React SaaS Template
+# React Stater Template
 React Stater is  a template for building an Website/Admin application using React + Material-UI.
 
 ## Getting Started
