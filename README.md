@@ -1,7 +1,6 @@
 # React SaaS Template
 Remains of a SaaS business I once tried to build. Now transformed into a template for building an SaaS/admin application using React + Material-UI.
 
-[**Check out the demo**](https://reactsaastemplate.com)
 
 ![Node.js CI](https://github.com/dunky11/react-saas-template/workflows/Node.js%20CI/badge.svg)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=dunky11/react-saas-template)](https://dependabot.com)
@@ -28,7 +27,7 @@ Remains of a SaaS business I once tried to build. Now transformed into a templat
 1. Clone the repository
 
    ```
-   git clone https://github.com/dunky11/react-saas-template
+   git clone https://github.com/JasperCool79/react-stater
    ```
 2. Install dependencies, this can take a minute
 
