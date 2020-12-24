@@ -7,15 +7,27 @@ import {
   Typography,
   Button,
   Hidden,
+  Badge,
   IconButton,
   withStyles
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HomeIcon from "@material-ui/icons/Home";
 import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../../shared/components/NavigationDrawer";
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -5,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
+
 
 const styles = theme => ({
   appBar: {
@@ -81,24 +93,24 @@ function NavBar(props) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="primary"
-            >
-              My
-            </Typography>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="secondary"
-            >
-              Shop
-            </Typography>
-          </div>
-          <div>
+            <Hidden smDown>
+              <Typography
+                variant="h4"
+                className={classes.brandText}
+                display="inline"
+                color="primary"
+              >
+                My
+              </Typography>
+              <Typography
+                variant="h4"
+                className={classes.brandText}
+                display="inline"
+                color="secondary"
+              >
+                Shop
+              </Typography>
+            </Hidden>
             <Hidden mdUp>
               <IconButton
                 className={classes.menuButton}
@@ -108,6 +120,8 @@ function NavBar(props) {
                 <MenuIcon color="primary" />
               </IconButton>
             </Hidden>
+          </div>
+          <div>
             <Hidden smDown>
               {menuItems.map(element => {
                 if (element.link) {
@@ -141,12 +155,20 @@ function NavBar(props) {
                 );
               })}
             </Hidden>
+            <IconButton
+              className={classes.menuButton}
+              aria-label="Cart"
+            >
+              <StyledBadge badgeContent={1} color="secondary">
+                <ShoppingCartIcon/>
+              </StyledBadge>
+            </IconButton>
           </div>
         </Toolbar>
       </AppBar>
       <NavigationDrawer
         menuItems={menuItems}
-        anchor="right"
+        anchor="left"
         open={mobileDrawerOpen}
         selectedItem={selectedTab}
         onClose={handleMobileDrawerClose}
