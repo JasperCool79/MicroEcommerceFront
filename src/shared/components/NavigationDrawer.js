@@ -18,7 +18,7 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const styles = theme => ({
   closeIcon: {
-    marginRight: theme.spacing(0.5)
+    marginLeft: theme.spacing(15)
   },
   headSection: {
     width: 200
